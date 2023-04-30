@@ -1,0 +1,1142 @@
+
+<!DOCTYPE html>
+<html lang="en-GB" prefix="og: https://ogp.me/ns#">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://citytradersimperium.com/xmlrpc.php" />
+<script type="rocketlazyloadscript">
+var theplus_ajax_url = "https://citytradersimperium.com/wp-admin/admin-ajax.php";
+		var theplus_ajax_post_url = "https://citytradersimperium.com/wp-admin/admin-post.php";
+		var theplus_nonce = "97a5fa6480";
+</script>
+
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+
+	const gtm4wp_scrollerscript_debugmode         = false;
+	const gtm4wp_scrollerscript_callbacktime      = 100;
+	const gtm4wp_scrollerscript_readerlocation    = 150;
+	const gtm4wp_scrollerscript_contentelementid  = "content";
+	const gtm4wp_scrollerscript_scannertime       = 60;
+</script>
+
+
+<title>Terms &amp; Conditions Of Service</title>
+<meta name="description" content="Please make sure that you read, agree with, and accept all of the terms and conditions contained in these Terms." />
+<meta name="robots" content="follow, noindex" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Terms &amp; Conditions Of Service" />
+<meta property="og:description" content="Please make sure that you read, agree with, and accept all of the terms and conditions contained in these Terms." />
+<meta property="og:url" content="https://citytradersimperium.com/terms-conditions-of-service/" />
+<meta property="og:site_name" content="Trade Wise Funding" />
+<meta property="article:publisher" content="https://www.facebook.com/CityTradersImperium/" />
+<meta property="article:author" content="https://www.facebook.com/CityTradersImperium/" />
+<meta property="og:updated_time" content="2022-07-08T08:30:53+01:00" />
+<meta property="article:published_time" content="2022-06-01T14:41:11+01:00" />
+<meta property="article:modified_time" content="2022-07-08T08:30:53+01:00" />
+<meta property="og:video" content="https://www.youtube.com/embed/&gt;
+						You" />
+<meta property="ya:ovs:upload_date" content="2022-06-01BST14:41:11+01:00" />
+<meta property="ya:ovs:allow_embed" content="true" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Terms &amp; Conditions Of Service" />
+<meta name="twitter:description" content="Please make sure that you read, agree with, and accept all of the terms and conditions contained in these Terms." />
+<meta name="twitter:site" content="@C_T_Imperium" />
+<meta name="twitter:creator" content="@CTI_Funding" />
+<meta name="twitter:label1" content="Time to read" />
+<meta name="twitter:data1" content="18 minutes" />
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://citytradersimperium.com/#person","name":"Trade Wise Funding","sameAs":["https://www.facebook.com/CityTradersImperium/","https://twitter.com/C_T_Imperium"],"logo":{"@type":"ImageObject","@id":"https://citytradersimperium.com/#logo","url":"https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo.png","contentUrl":"https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo.png","caption":"Trade Wise Funding","inLanguage":"en-GB","width":"300","height":"100"},"image":{"@type":"ImageObject","@id":"https://citytradersimperium.com/#logo","url":"https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo.png","contentUrl":"https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo.png","caption":"Trade Wise Funding","inLanguage":"en-GB","width":"300","height":"100"}},{"@type":"WebSite","@id":"https://citytradersimperium.com/#website","url":"https://citytradersimperium.com","name":"Trade Wise Funding","publisher":{"@id":"https://citytradersimperium.com/#person"},"inLanguage":"en-GB"},{"@type":"WebPage","@id":"https://citytradersimperium.com/terms-conditions-of-service/#webpage","url":"https://citytradersimperium.com/terms-conditions-of-service/","name":"Terms &amp; Conditions Of Service","datePublished":"2022-06-01T14:41:11+01:00","dateModified":"2022-07-08T08:30:53+01:00","isPartOf":{"@id":"https://citytradersimperium.com/#website"},"inLanguage":"en-GB"},{"@type":"Person","@id":"https://citytradersimperium.com/terms-conditions-of-service/#author","name":"Trade Wise Funding","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/8c7aaa0e8b036dae240f104eb9db6a12?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/8c7aaa0e8b036dae240f104eb9db6a12?s=96&amp;d=mm&amp;r=g","caption":"Trade Wise Funding","inLanguage":"en-GB"},"sameAs":["https://citytradersimperium.com//","https://www.facebook.com/CityTradersImperium/","https://twitter.com/CTI_Funding"]},{"@type":"Article","headline":"Terms &amp; Conditions Of Service","description":"Please make sure that you read, agree with, and accept all of the terms and conditions contained in these Terms.","datePublished":"2022-06-01T14:41:11+01:00","dateModified":"2022-07-08T08:30:53+01:00","author":{"@id":"https://citytradersimperium.com/terms-conditions-of-service/#author","name":"Trade Wise Funding"},"name":"Terms &amp; Conditions Of Service","@id":"https://citytradersimperium.com/terms-conditions-of-service/#schema-92687","isPartOf":{"@id":"https://citytradersimperium.com/terms-conditions-of-service/#webpage"},"publisher":{"@id":"https://citytradersimperium.com/#person"},"inLanguage":"en-GB","mainEntityOfPage":{"@id":"https://citytradersimperium.com/terms-conditions-of-service/#webpage"}},{"@type":"VideoObject","name":"Terms &amp; Conditions Of Service","description":"Please make sure that you read, agree with, and accept all of the terms and conditions contained in these Terms.","uploadDate":"2022-06-01T14:41:11+01:00","embedUrl":"https://www.youtube.com/embed/&gt;\n\t\t\t\t\t\tYou","isFamilyFriendly":"True","@id":"https://citytradersimperium.com/terms-conditions-of-service/#schema-92688","isPartOf":{"@id":"https://citytradersimperium.com/terms-conditions-of-service/#webpage"},"publisher":{"@id":"https://citytradersimperium.com/#person"},"inLanguage":"en-GB"}]}</script>
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel="alternate" type="application/rss+xml" title="Trade Wise Funding &raquo; Feed" href="https://citytradersimperium.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Trade Wise Funding &raquo; Comments Feed" href="https://citytradersimperium.com/comments/feed/" />
+<script type="rocketlazyloadscript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/citytradersimperium.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=928f64076eb5dfa6f2474dfde395a3d1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://citytradersimperium.com/wp-includes/css/dist/block-library/style.min.css?ver=928f64076eb5dfa6f2474dfde395a3d1' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://citytradersimperium.com/wp-includes/css/classic-themes.min.css?ver=928f64076eb5dfa6f2474dfde395a3d1' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='cookie-law-info-css' href='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/webtoffee-gdpr-cookie-consent/public/css/cookie-law-info-public.css?ver=1682620696' media='all' />
+<link data-minify="1" rel='stylesheet' id='cookie-law-info-gdpr-css' href='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/webtoffee-gdpr-cookie-consent/public/css/cookie-law-info-gdpr.css?ver=1682620696' media='all' />
+<style id='cookie-law-info-gdpr-inline-css'>
+.cli-modal-content, .cli-tab-content { background-color: #ffffff; }.cli-privacy-content-text, .cli-modal .cli-modal-dialog, .cli-tab-container p, a.cli-privacy-readmore { color: #000000; }.cli-tab-header { background-color: #f2f2f2; }.cli-tab-header, .cli-tab-header a.cli-nav-link,span.cli-necessary-caption,.cli-switch .cli-slider:after { color: #000000; }.cli-switch .cli-slider:before { background-color: #ffffff; }.cli-switch input:checked + .cli-slider:before { background-color: #ffffff; }.cli-switch .cli-slider { background-color: #e3e1e8; }.cli-switch input:checked + .cli-slider { background-color: #28a745; }.cli-modal-close svg { fill: #000000; }.cli-tab-footer .wt-cli-privacy-accept-all-btn { background-color: #00acad; color: #ffffff}.cli-tab-footer .wt-cli-privacy-accept-btn { background-color: #00acad; color: #ffffff}.cli-tab-header a:before{ border-right: 1px solid #000000; border-bottom: 1px solid #000000; }
+</style>
+<link data-minify="1" rel='stylesheet' id='hfe-style-css' href='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=1682620696' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-css' href='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1682620696' media='all' />
+<link rel='stylesheet' id='elementor-frontend-legacy-css' href='https://citytradersimperium.com/wp-content/plugins/elementor/assets/css/frontend-legacy.min.css?ver=3.12.2' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://citytradersimperium.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.12.2' media='all' />
+<link rel='stylesheet' id='swiper-css' href='https://citytradersimperium.com/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6' media='all' />
+<link rel='stylesheet' id='elementor-post-47-css' href='https://citytradersimperium.com/wp-content/uploads/elementor/css/post-47.css?ver=1682307061' media='all' />
+<link rel='stylesheet' id='elementor-pro-css' href='https://citytradersimperium.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.12.3' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-5-all-css' href='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=1682620697' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css' href='https://citytradersimperium.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.12.2' media='all' />
+<link rel='stylesheet' id='elementor-post-3570-css' href='https://citytradersimperium.com/wp-content/uploads/elementor/css/post-3570.css?ver=1682309305' media='all' />
+<link data-minify="1" rel='stylesheet' id='hfe-widgets-style-css' href='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=1682620697' media='all' />
+<link rel='stylesheet' id='elementor-post-202-css' href='https://citytradersimperium.com/wp-content/uploads/elementor/css/post-202.css?ver=1682307062' media='all' />
+<link rel='stylesheet' id='elementor-post-194-css' href='https://citytradersimperium.com/wp-content/uploads/elementor/css/post-194.css?ver=1682307062' media='all' />
+<link rel='stylesheet' id='theplus-front-css-css' href='//citytradersimperium.com/wp-content/uploads/theplus-addons/theplus.min.css?ver=1682309305' media='all' />
+<link rel='stylesheet' id='plus-pre-loader-css-css' href='//citytradersimperium.com/wp-content/plugins/theplus_elementor_addon/assets/css/main/pre-loader/plus-pre-loader.min.css?ver=5.1.6' media='all' />
+<link rel='stylesheet' id='hello-elementor-css' href='https://citytradersimperium.com/wp-content/themes/hello-elementor/style.min.css?ver=2.7.1' media='all' />
+<link rel='stylesheet' id='hello-elementor-theme-style-css' href='https://citytradersimperium.com/wp-content/themes/hello-elementor/theme.min.css?ver=2.7.1' media='all' />
+<link rel='stylesheet' id='eael-general-css' href='https://citytradersimperium.com/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css?ver=5.7.1' media='all' />
+<style id='rocket-lazyload-inline-css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://citytradersimperium.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Condensed%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=928f64076eb5dfa6f2474dfde395a3d1' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://citytradersimperium.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=1682620697' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-regular-css' href='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=1682620697' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-brands-css' href='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=1682620697' media='all' />
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.3' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js' defer></script>
+<script id='cookie-law-info-js-extra'>
+var Cli_Data = {"nn_cookie_ids":[],"non_necessary_cookies":[],"cookielist":[],"ajax_url":"https:\/\/citytradersimperium.com\/wp-admin\/admin-ajax.php","current_lang":"en","security":"197a6c992e","eu_countries":["GB"],"geoIP":"disabled","use_custom_geolocation_api":"","custom_geolocation_api":"https:\/\/geoip.cookieyes.com\/geoip\/checker\/result.php","consentVersion":"1","strictlyEnabled":["necessary","obligatoire"],"cookieDomain":"","privacy_length":"250","ccpaEnabled":"","ccpaRegionBased":"","ccpaBarEnabled":"1","ccpaType":"gdpr","triggerDomRefresh":"","secure_cookies":""};
+var log_object = {"ajax_url":"https:\/\/citytradersimperium.com\/wp-admin\/admin-ajax.php"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/webtoffee-gdpr-cookie-consent/public/js/cookie-law-info-public.js?ver=1682620697' id='cookie-law-info-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/duracelltomi-google-tag-manager/js/analytics-talk-content-tracking.js?ver=1682620697' id='gtm4wp-scroll-tracking-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.12.2' id='font-awesome-4-shim-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='//citytradersimperium.com/wp-content/plugins/theplus_elementor_addon/assets/js/main/pre-loader/plus-pre-loader-extra-transition.min.js?ver=5.1.6' id='plus-pre-loader-js2-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='//citytradersimperium.com/wp-content/plugins/theplus_elementor_addon/assets/js/main/pre-loader/plus-pre-loader.min.js?ver=5.1.6' id='plus-pre-loader-js-js' defer></script>
+
+<script type="rocketlazyloadscript" data-rocket-src='https://www.googletagmanager.com/gtag/js?id=UA-126267292-1' id='google_gtagjs-js' async></script>
+<script type="rocketlazyloadscript" id='google_gtagjs-js-after'>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["citytradersimperium.com"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-126267292-1", {"anonymize_ip":true});
+</script>
+
+<link rel="https://api.w.org/" href="https://citytradersimperium.com/wp-json/" /><link rel="alternate" type="application/json" href="https://citytradersimperium.com/wp-json/wp/v2/pages/3570" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://citytradersimperium.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://citytradersimperium.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://citytradersimperium.com/?p=3570' />
+<link rel="alternate" type="application/json+oembed" href="https://citytradersimperium.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcitytradersimperium.com%2Fterms-conditions-of-service%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://citytradersimperium.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcitytradersimperium.com%2Fterms-conditions-of-service%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.99.0" />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+  window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+    })(document);
+    smartlook('init', '421890b393fcf3e576d68bdc5c50771832f2c78a', { region: 'eu' });
+</script>
+
+
+
+<script type="rocketlazyloadscript">
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','odxqd');
+</script>
+
+
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+
+(function(m, o, n, t, e, r, _){
+m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
+})(window, document, 'script', 'https://ga2.getresponse.com/script/f349e302-43c9-48a9-b274-27abbc22712c/ga.js', 'GrTracking');
+
+GrTracking('setDomain', 'auto');
+GrTracking('push');
+</script>
+
+
+
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">
+	var dataLayer_content = {"visitorLoginState":"logged-out","visitorEmail":"","visitorEmailHash":"","visitorIP":"2a02:c7c:6a4a:3100:b158:e964:dee7:21ef","pageTitle":"Terms &amp; Conditions Of Service","pagePostType":"page","pagePostType2":"single-page","pagePostAuthorID":2,"pagePostAuthor":"Trade Wise Funding","pagePostDate":"June 1, 2022","pagePostDateYear":"2022","pagePostDateMonth":"06","pagePostDateDay":"01","pagePostDateDayName":"Wednesday","pagePostDateHour":"14","pagePostDateMinute":"41","pagePostDateIso":"2022-06-01T14:41:11+01:00","pagePostDateUnix":1654094471,"pagePostTerms":[],"browserName":"Safari","browserVersion":"16.3","browserEngineName":"Webkit","browserEngineVersion":"605.1.15","osName":"OS X","osVersion":"10.15.7","deviceType":"desktop","deviceManufacturer":"Apple","deviceModel":"Macintosh","postCountOnPage":1,"postCountTotal":1,"postID":3570,"postFormat":"standard"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TFVXLKG');
+</script>
+
+ <style>*:not(.elementor-editor-active) .plus-conditions--hidden {
+				  display: none;
+				}</style>
+<script>
+			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+		</script>
+<style>
+			.no-js img.lazyload { display: none; }
+			figure.wp-block-image img.lazyloading { min-width: 150px; }
+							.lazyload, .lazyloading { opacity: 0; }
+				.lazyloaded {
+					opacity: 1;
+					transition: opacity 400ms;
+					transition-delay: 0ms;
+				}
+					</style>
+
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+
+<meta name="generator" content="Elementor 3.12.2; features: a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+
+<script type="rocketlazyloadscript">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '445070179586138');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=445070179586138&ev=PageView&noscript=1"
+/></noscript>
+
+<script type="rocketlazyloadscript" id="google_gtagjs" data-rocket-src="https://citytradersimperium.com/?local_ga_js=062d35e405fbe815d9c9ca58c02037da" async></script>
+<script type="rocketlazyloadscript" id="google_gtagjs-inline">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-126267292-1', {} );
+</script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2366511157760355&amp;host=ca-host-pub-2644536267352236" crossorigin="anonymous"></script>
+
+
+<script type="rocketlazyloadscript">
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-N9TT7WB' );
+			
+</script>
+
+<meta name="theme-color" content="#FFFFFF">
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=AW-348542794"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-348542794');
+</script>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+
+(function(m, o, n, t, e, r, _){
+m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
+})(window, document, 'script', 'https://ga2.getresponse.com/script/f349e302-43c9-48a9-b274-27abbc22712c/ga.js', 'GrTracking');
+
+GrTracking('setDomain', 'auto');
+GrTracking('push');
+</script>
+
+<link rel="icon" href="https://citytradersimperium.com/wp-content/uploads/2020/03/City-Traders-Imperium-Logo-3-100x100.png" sizes="32x32" />
+<link rel="icon" href="https://citytradersimperium.com/wp-content/uploads/2020/03/City-Traders-Imperium-Logo-3-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://citytradersimperium.com/wp-content/uploads/2020/03/City-Traders-Imperium-Logo-3-300x300.png" />
+<meta name="msapplication-TileImage" content="https://citytradersimperium.com/wp-content/uploads/2020/03/City-Traders-Imperium-Logo-3-300x300.png" />
+<style id="wp-custom-css">
+			
+@media (max-width:767px) {
+.elementor-section-wrap {
+    overflow: hidden!important;
+}
+ display: none!important;
+}
+span.eael-simple-menu-toggle-text {
+    display: none;
+}
+.tp-process-steps-wrapper {
+    min-height: auto!important;
+}
+
+}
+
+#trustpilot-gtm-floating-wrapper {
+  display: none !important;
+}		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body class="page-template page-template-elementor_header_footer page page-id-3570 wp-custom-logo ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor elementor-default elementor-template-full-width elementor-kit-47 elementor-page elementor-page-3570">
+
+<script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 12755076;
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechatinc.com/chat-with/12755076/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+
+
+<noscript>
+			<iframe  height="0" width="0" style="display:none;visibility:hidden" data-src="https://www.googletagmanager.com/ns.html?id=GTM-N9TT7WB" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
+		</noscript>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+
+
+<noscript><iframe  height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true" data-src="https://www.googletagmanager.com/ns.html?id=GTM-TFVXLKG" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe></noscript>
+<div id="page" class="hfeed site">
+<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+<p class="main-title bhf-hidden" itemprop="headline"><a href="https://citytradersimperium.com" title="Trade Wise Funding" rel="home">Trade Wise Funding</a></p>
+<div data-elementor-type="wp-post" data-elementor-id="202" class="elementor elementor-202">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section data-particle_enable="false" data-particle-mobile-disabled="false" class="elementor-section elementor-top-section elementor-element elementor-element-504fd6c elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="504fd6c" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;tp_display_rules_enable&quot;:&quot;yes&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;tp_display_rules_output&quot;:&quot;yes&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-138252f" data-id="138252f" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-a385559 elementor-widget elementor-widget-image" data-id="a385559" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<a href="https://citytradersimperium.com/">
+<img width="528" height="100" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20528%20100'%3E%3C/svg%3E" class="attachment-full size-full wp-image-23322" alt="Forex Prop Firms - Forex Prop Trading Firms - Prop Firms 35" data-lazy-srcset="https://citytradersimperium.com/wp-content/uploads/2022/04/Forex-Prop-Firms-Forex-Prop-Trading-Firms-Prop-Firms-35.png 528w, https://citytradersimperium.com/wp-content/uploads/2022/04/Forex-Prop-Firms-Forex-Prop-Trading-Firms-Prop-Firms-35-300x57.png 300w" data-lazy-sizes="(max-width: 528px) 100vw, 528px" data-lazy-src="https://citytradersimperium.com/wp-content/uploads/2022/04/Forex-Prop-Firms-Forex-Prop-Trading-Firms-Prop-Firms-35.png" /><noscript><img width="528" height="100"   alt="Forex Prop Firms - Forex Prop Trading Firms - Prop Firms 35" data-srcset="https://citytradersimperium.com/wp-content/uploads/2022/04/Forex-Prop-Firms-Forex-Prop-Trading-Firms-Prop-Firms-35.png 528w, https://citytradersimperium.com/wp-content/uploads/2022/04/Forex-Prop-Firms-Forex-Prop-Trading-Firms-Prop-Firms-35-300x57.png 300w"  data-src="https://citytradersimperium.com/wp-content/uploads/2022/04/Forex-Prop-Firms-Forex-Prop-Trading-Firms-Prop-Firms-35.png" data-sizes="(max-width: 528px) 100vw, 528px" class="attachment-full size-full wp-image-23322 lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="528" height="100" src="https://citytradersimperium.com/wp-content/uploads/2022/04/Forex-Prop-Firms-Forex-Prop-Trading-Firms-Prop-Firms-35.png" class="attachment-full size-full wp-image-23322" alt="Forex Prop Firms - Forex Prop Trading Firms - Prop Firms 35" srcset="https://citytradersimperium.com/wp-content/uploads/2022/04/Forex-Prop-Firms-Forex-Prop-Trading-Firms-Prop-Firms-35.png 528w, https://citytradersimperium.com/wp-content/uploads/2022/04/Forex-Prop-Firms-Forex-Prop-Trading-Firms-Prop-Firms-35-300x57.png 300w" sizes="(max-width: 528px) 100vw, 528px" /></noscript></noscript> </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-f53d04b" data-id="f53d04b" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-22c8b20 elementor-nav-menu__align-center elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-tablet elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="22c8b20" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+<div class="elementor-widget-container">
+<nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
+<ul id="menu-1-22c8b20" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1130"><a href="https://citytradersimperium.com/" class="elementor-item">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-26456"><a href="https://citytradersimperium.com/funded-account-challenge-funding-program/" class="elementor-item">Challenge</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31617"><a href="https://citytradersimperium.com/challenge-withdrawals/" class="elementor-sub-item">Withdrawals &#038; Salary</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34476"><a href="https://citytradersimperium.com/challenge-scaling-plans/" class="elementor-sub-item">Scaling Plans</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26457"><a href="https://citytradersimperium.com/challenge-terms-conditions/" class="elementor-sub-item">T&#038;Cs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9188"><a href="https://citytradersimperium.com/forex-funded-trader-accounts/" class="elementor-item">Instant Funding</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35656"><a href="https://citytradersimperium.com/instant-funding-scaling-plans/" class="elementor-sub-item">Scaling Plans</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25931"><a href="https://citytradersimperium.com/instant-and-direct-funding-withdrawals/" class="elementor-sub-item">Withdrawals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35672"><a href="https://citytradersimperium.com/instant-funding-terms-and-conditions/" class="elementor-sub-item">T&#038;Cs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-28964"><a href="https://citytradersimperium.com/direct-funding-program/" class="elementor-item">Direct Funding</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35520"><a href="https://citytradersimperium.com/direct-funding-scaling-plans/" class="elementor-sub-item">Scaling Plans</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29808"><a href="https://citytradersimperium.com/instant-and-direct-funding-withdrawals/" class="elementor-sub-item">Withdrawals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29737"><a href="https://citytradersimperium.com/direct-funding-terms-and-conditions/" class="elementor-sub-item">T&#038;Cs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-28960"><a href="https://citytradersimperium.com/funding-programs/" class="elementor-item">More</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29006"><a href="https://citytradersimperium.com/funding-faqs/" class="elementor-sub-item">Funding FAQs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12143"><a href="https://citytradersimperium.com/affiliate-program-3/" class="elementor-sub-item">Become an Affiliate</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17648"><a href="https://citytradersimperium.com/success-stories/" class="elementor-sub-item">Testimonials</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31422"><a target="_blank" rel="noopener" href="https://citytradersimperium.com/free-trial/" class="elementor-sub-item">Free Trial</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31439"><a href="https://citytradersimperium.com/symbols-specifications-trading-hours/" class="elementor-sub-item">Symbol Specifications</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-29286"><a href="https://citytradersimperium.com/forex-education-programs/" class="elementor-item">Forex Education</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-19673"><a href="https://citytradersimperium.com/smart-money-concepts-bank-level-trading/" class="elementor-sub-item">Bank Level Trading</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32546"><a target="_blank" rel="noopener" href="https://cti-quant.com/smart-money-concepts-indicators/" class="elementor-sub-item">SMC Indicators</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14627"><a href="https://citytradersimperium.com/profitable-forex-strategy/" class="elementor-sub-item">STT Strategy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16501"><a href="https://citytradersimperium.com/day-trading-strategy/" class="elementor-sub-item">Corrective Strategy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6106"><a href="https://citytradersimperium.com/trading-psychology-forex-education/" class="elementor-sub-item">Build Your Edge</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26415"><a href="https://citytradersimperium.com/learn-to-trade-forex-trading-beginners/" class="elementor-sub-item">Forex For Beginners</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31185"><a target="_blank" rel="noopener" href="https://citytradersimperium.com/join-free-cti-discord-community/" class="elementor-item">Join Community</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-26254"><a href="#" class="elementor-item elementor-item-anchor">Other</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24769"><a href="https://citytradersimperium.com/forex-trading-and-education/" class="elementor-sub-item">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31117"><a href="https://citytradersimperium.com/fundamental-analysis-forex/" class="elementor-sub-item">Fundamental Analysis</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22710"><a href="https://citytradersimperium.com/funded-traders-world-cup-competitions/" class="elementor-sub-item">World Cup</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31116"><a href="https://citytradersimperium.com/white-labels/" class="elementor-sub-item">White Labels</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32547"><a target="_blank" rel="noopener" href="https://cti-quant.com/quantsyde/" class="elementor-sub-item">Strategy Builder</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32548"><a target="_blank" rel="noopener" href="https://cti-quant.com/ea-development/" class="elementor-sub-item">EA Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1127"><a href="https://citytradersimperium.com/meet-cti-traders/" class="elementor-sub-item">Our Team</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6107"><a href="https://cticommunity.com/login/" class="elementor-sub-item">Courses Login</a></li>
+</ul>
+</li>
+</ul> </nav>
+<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i> <span class="elementor-screen-only">Menu</span>
+</div>
+<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+<ul id="menu-2-22c8b20" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1130"><a href="https://citytradersimperium.com/" class="elementor-item" tabindex="-1">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-26456"><a href="https://citytradersimperium.com/funded-account-challenge-funding-program/" class="elementor-item" tabindex="-1">Challenge</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31617"><a href="https://citytradersimperium.com/challenge-withdrawals/" class="elementor-sub-item" tabindex="-1">Withdrawals &#038; Salary</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34476"><a href="https://citytradersimperium.com/challenge-scaling-plans/" class="elementor-sub-item" tabindex="-1">Scaling Plans</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26457"><a href="https://citytradersimperium.com/challenge-terms-conditions/" class="elementor-sub-item" tabindex="-1">T&#038;Cs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9188"><a href="https://citytradersimperium.com/forex-funded-trader-accounts/" class="elementor-item" tabindex="-1">Instant Funding</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35656"><a href="https://citytradersimperium.com/instant-funding-scaling-plans/" class="elementor-sub-item" tabindex="-1">Scaling Plans</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25931"><a href="https://citytradersimperium.com/instant-and-direct-funding-withdrawals/" class="elementor-sub-item" tabindex="-1">Withdrawals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35672"><a href="https://citytradersimperium.com/instant-funding-terms-and-conditions/" class="elementor-sub-item" tabindex="-1">T&#038;Cs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-28964"><a href="https://citytradersimperium.com/direct-funding-program/" class="elementor-item" tabindex="-1">Direct Funding</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35520"><a href="https://citytradersimperium.com/direct-funding-scaling-plans/" class="elementor-sub-item" tabindex="-1">Scaling Plans</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29808"><a href="https://citytradersimperium.com/instant-and-direct-funding-withdrawals/" class="elementor-sub-item" tabindex="-1">Withdrawals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29737"><a href="https://citytradersimperium.com/direct-funding-terms-and-conditions/" class="elementor-sub-item" tabindex="-1">T&#038;Cs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-28960"><a href="https://citytradersimperium.com/funding-programs/" class="elementor-item" tabindex="-1">More</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29006"><a href="https://citytradersimperium.com/funding-faqs/" class="elementor-sub-item" tabindex="-1">Funding FAQs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12143"><a href="https://citytradersimperium.com/affiliate-program-3/" class="elementor-sub-item" tabindex="-1">Become an Affiliate</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17648"><a href="https://citytradersimperium.com/success-stories/" class="elementor-sub-item" tabindex="-1">Testimonials</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31422"><a target="_blank" rel="noopener" href="https://citytradersimperium.com/free-trial/" class="elementor-sub-item" tabindex="-1">Free Trial</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31439"><a href="https://citytradersimperium.com/symbols-specifications-trading-hours/" class="elementor-sub-item" tabindex="-1">Symbol Specifications</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-29286"><a href="https://citytradersimperium.com/forex-education-programs/" class="elementor-item" tabindex="-1">Forex Education</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-19673"><a href="https://citytradersimperium.com/smart-money-concepts-bank-level-trading/" class="elementor-sub-item" tabindex="-1">Bank Level Trading</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32546"><a target="_blank" rel="noopener" href="https://cti-quant.com/smart-money-concepts-indicators/" class="elementor-sub-item" tabindex="-1">SMC Indicators</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14627"><a href="https://citytradersimperium.com/profitable-forex-strategy/" class="elementor-sub-item" tabindex="-1">STT Strategy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16501"><a href="https://citytradersimperium.com/day-trading-strategy/" class="elementor-sub-item" tabindex="-1">Corrective Strategy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6106"><a href="https://citytradersimperium.com/trading-psychology-forex-education/" class="elementor-sub-item" tabindex="-1">Build Your Edge</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26415"><a href="https://citytradersimperium.com/learn-to-trade-forex-trading-beginners/" class="elementor-sub-item" tabindex="-1">Forex For Beginners</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31185"><a target="_blank" rel="noopener" href="https://citytradersimperium.com/join-free-cti-discord-community/" class="elementor-item" tabindex="-1">Join Community</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-26254"><a href="#" class="elementor-item elementor-item-anchor" tabindex="-1">Other</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24769"><a href="https://citytradersimperium.com/forex-trading-and-education/" class="elementor-sub-item" tabindex="-1">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31117"><a href="https://citytradersimperium.com/fundamental-analysis-forex/" class="elementor-sub-item" tabindex="-1">Fundamental Analysis</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22710"><a href="https://citytradersimperium.com/funded-traders-world-cup-competitions/" class="elementor-sub-item" tabindex="-1">World Cup</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31116"><a href="https://citytradersimperium.com/white-labels/" class="elementor-sub-item" tabindex="-1">White Labels</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32547"><a target="_blank" rel="noopener" href="https://cti-quant.com/quantsyde/" class="elementor-sub-item" tabindex="-1">Strategy Builder</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32548"><a target="_blank" rel="noopener" href="https://cti-quant.com/ea-development/" class="elementor-sub-item" tabindex="-1">EA Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1127"><a href="https://citytradersimperium.com/meet-cti-traders/" class="elementor-sub-item" tabindex="-1">Our Team</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6107"><a href="https://cticommunity.com/login/" class="elementor-sub-item" tabindex="-1">Courses Login</a></li>
+</ul>
+</li>
+</ul> </nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</header>
+<div data-elementor-type="wp-page" data-elementor-id="3570" class="elementor elementor-3570">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section data-particle_enable="false" data-particle-mobile-disabled="false" class="elementor-section elementor-top-section elementor-element elementor-element-6644ad0 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6644ad0" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-29f19db" data-id="29f19db" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-60dc075 elementor-widget elementor-widget-heading" data-id="60dc075" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h1 class="elementor-heading-title elementor-size-default">Terms & Conditions of Services</h1> </div>
+</div>
+<div class="elementor-element elementor-element-0363b6e elementor-widget elementor-widget-text-editor" data-id="0363b6e" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p style="text-align: right;">Last Updated 22/12/2020</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-a98a5ca elementor-widget elementor-widget-text-editor" data-id="a98a5ca" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p><strong>PLEASE ENSURE YOU HAVE READ AND UNDERSTOOD THE TERMS AND CONDITIONS OF CTI SERVICES BELOW BEFORE USING THIS SITE. </strong></p><p><strong>BY PURCHASING ANY OF OUR SERVICES, YOU ARE AGREEING TO ALL OF OUR T&amp;Cs.</strong></p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-cf5a1be elementor-widget elementor-widget-text-editor" data-id="cf5a1be" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Thank you for looking at the website for Trade Wise Funding Limited (CTI, we, us).  It is important that we make these terms and conditions available to you and that you understand them.  If you have any questions, please do contact us via email on <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e3d2a372d2b2e2e312c2a1e29312c3a2e2c3b2d2d73666a6c6e6f69736c676c6c6b6d6d703d32312b3a293f272d3f2e2e2d703d3133">[email&#160;protected]</a></p><p>These terms and conditions are all about using our website <a href="https://citytradersimperium.com/">citytradersimperium.com</a> and/or <a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>.</p><p>Please read them immediately.  It’s important that you do so before you use our website. <strong>By using our site, you confirm that you accept these terms of use and that you agree to comply with them</strong>.</p><p>If you do not agree to these terms, you must NOT use our site.  If you do, print off a copy and keep it safe.</p><p style="text-align: center;"><strong>Trade Wise Funding is NOT authorised or regulated by the Financial Conduct Authority. </strong><strong>CTI does not undertake any regulated activities.</strong></p><p>And remember that these are not our only terms.  You also need to look</p><p>(1) at our privacy policy (it tells you how we use your personal data and more, so it’s really important for you) and;</p><p>(2) our funding terms &amp; conditions (it tells you all the rules and guidelines in which you must comply when providing funding through our funded trader program).</p><p>This means that it’s important that you know who we are, and so we have set out below, very clearly. our full details are:</p><p>Full name of legal entity: Trade Wise Funding Limited.<br />Email address: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6506110c161015150a171125120a17011517001616485d515755545248575c57575056564b06090a100112041c16041515164b060a084b">[email&#160;protected]</a><br />Postal address: 124 Kemp House, City Rd, EC1V 2NX, London, UK.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-c550642 elementor-widget elementor-widget-heading" data-id="c550642" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">CHANGES ‎</h2> </div>
+</div>
+<div class="elementor-element elementor-element-f67d725 elementor-widget elementor-widget-text-editor" data-id="f67d725" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>We amend these terms from time to time so you need to look at them each and every time you use our site.   So, check them regularly and ensure you understand the terms that apply at that time.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-d373623 elementor-widget elementor-widget-heading" data-id="d373623" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">REFUND POLICY</h2> </div>
+</div>
+<div class="elementor-element elementor-element-2a9b1ec elementor-widget elementor-widget-text-editor" data-id="2a9b1ec" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Occasionally, we understand that clients may not be satisfied with our service or it may not fulfil their needs. In these circumstances, we encourage clients to contact us to discuss their concerns. Our refund policy for each service is as follows:</p><ol><li>Classic Funded Trader Program: a refund is only available within the first seven days. if the Evaluation has not been traded.</li><li>Build Your Edge (BYE): a refund is only available within the first seven days from the signup date. </li><li>The STT Strategy (STT): a refund is only available within the first seven days from the signup date. </li><li>The Corrective Strategy (CS): a refund is only available within the first seven days from the signup date. </li><li>Bank Level Trading (BLT): a refund is only available within the first seven days from the signup date.</li><li>Intro To Forex (ITF): a refund is only available within the first seven days from the signup date.</li></ol><p>All payments that are paid in 2 instalments (50% on the signup date and 50% 30 days after) are binding and must be paid in full. Instalments must not be confused with Subscriptions where cancellation can be made at any time. All Instalments are not subscription payments and are not refundable once the initial 7 days grace period is over. The 7 days refund policy applies only if no videos have been watched.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-bb04a8f elementor-widget elementor-widget-heading" data-id="bb04a8f" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">THE SITE ‎</h2> </div>
+</div>
+<div class="elementor-element elementor-element-cb90905 elementor-widget elementor-widget-text-editor" data-id="cb90905" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>We don’t charge you for using our site. Neither do we guarantee that it or any content on it, will always be available or be uninterrupted. We may suspend or withdraw or restrict the availability of all or any part of our site for business and operational reasons, though we will try to give you reasonable notice of any suspension or withdrawal.  </p><p>We need your help too.  You are also responsible for ensuring that all persons who access our site through your internet connection are aware of these terms of use and other applicable terms and conditions and that they comply with them.</p><p>And it’s not just us and you.  We may transfer our rights and obligations under these terms to another organisation. We will always tell you in writing if this happens and we will ensure that the transfer will not affect your rights under the contract.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-2f22962 elementor-widget elementor-widget-heading" data-id="2f22962" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">STAY SAFE!‎</h2> </div>
+</div>
+<div class="elementor-element elementor-element-f695dc7 elementor-widget elementor-widget-text-editor" data-id="f695dc7" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Try to use a user identification code, password or any other piece of information as part of our security procedures and then keep it really safe, and confidential.  We value security as well, so we have the right to disable any user identification code or password, whether chosen by you or allocated by us, at any time, if in our reasonable opinion you have failed to comply with any of the provisions of these terms of use.  If you know or suspect that anyone other than you know your user identification code or password, you must let us know straight away.  Look above for our contact details.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-a42a806 elementor-widget elementor-widget-heading" data-id="a42a806" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">OWNERSHIP</h2> </div>
+</div>
+<div class="elementor-element elementor-element-abe74ca elementor-widget elementor-widget-text-editor" data-id="abe74ca" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Please remember and respect the fact that we are the owner or the licensee of all intellectual property rights in our site, and in the material published on it. Those works are protected by copyright laws and treaties around the world, all such rights are reserved and there are limits on what you can do. You may print off one copy and may download extracts, of any page(s) from our site for your personal use and you may draw the attention of others within your organisation to content posted on our site.</p><p>But you must not modify the paper or digital copies of any materials you have printed off or downloaded in any way, and you must not use any illustrations, photographs, video or audio sequences or any graphics separately from any accompanying text.</p><p>We require you to always acknowledge our status (and that of any identified contributors) as the authors of content on our site. And please be clear on this point &#8211; you must not use any part of the content on our site for commercial purposes without obtaining a licence to do so from us or our licensors. If you print off, copy or download any part of our site in breach of these terms of use, your right to use our site will cease immediately and you must, at our option, return or destroy any copies of the materials you have made.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-689201e elementor-widget elementor-widget-heading" data-id="689201e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">NO RELIANCE OR RESPONSIBILITY</h2> </div>
+</div>
+<div class="elementor-element elementor-element-07a13d4 elementor-widget elementor-widget-text-editor" data-id="07a13d4" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Like so many websites, the content on our site is provided for general information only. It is not intended to amount to advice on which you should rely. You must obtain professional or specialist advice before taking, or refraining from, any action on the basis of the content on our site.   Although we make reasonable efforts to update the information on our site, we make no representations, warranties or guarantees, whether express or implied, that the content on our site is accurate, complete or up to date.  It&#8217;s really important that you understand this and know that by using the site you acknowledge your understanding.</p><p>It&#8217;s also important for you to know and understand that while our site contains links to other sites and resources provided by third parties, these links are provided for your information only. The content of such links are not approved by us, and no such approval should be interpreted.   We have no control over the contents of those sites or resources.</p><p>It’s also important for you to know and understand that the site may include information and materials which have been uploaded to it by other users.  These can include, among others, bulletin boards and chat rooms. We must stress that this information and these materials have not been verified or approved by us and that in no way do these views expressed by other users of our site represent our views or values.  If you wish to complain about content uploaded by other users, please contact us.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-a9a5236 elementor-widget elementor-widget-heading" data-id="a9a5236" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">DAMAGE</h2> </div>
+</div>
+<div class="elementor-element elementor-element-e442f11 elementor-widget elementor-widget-text-editor" data-id="e442f11" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Whether you are a consumer or a business user, we do not exclude or limit in any way our liability to you where it would be unlawful to do so. However, different limitations and exclusions of liability will apply to liability arising as a result of the supply of any services to you – contact us for details.</p><p>If you are a business user, the following applies to you:</p><ol><li>We exclude all implied conditions, warranties, representations or other terms that may apply to our site or any content on it.</li><li>We will not be liable to you for any loss or damage, whether in contract, tort (including negligence), breach of statutory duty, or otherwise, even if foreseeable, arising under or in connection with:</li></ol><ul><li style="list-style-type: none;"><ul><li>use of, or inability to use our site; or</li><li>use of or reliance on any content displayed on our site.</li></ul></li></ul><ol start="3"><li>In particular, we will not be liable for:</li></ol><ol><li style="list-style-type: none;"><ul><li>loss of profits, sales, business, or revenue;</li><li>business interruption;</li><li>loss of anticipated savings;</li><li>loss of business opportunity, goodwill or reputation; or</li><li>any indirect or consequential loss or damage.</li></ul></li></ol><p> </p><p>If you are a consumer user, the following which applies:</p><ol><li>We only provide our site for domestic and private use. You agree not to use our site for any commercial or business purposes, and we have no liability to you for any loss of profit, loss of business, business interruption, or loss of business opportunity.</li><li>If defective digital content that we have supplied damages a device or digital content belonging to you and this is caused by our failure to use reasonable care and skill, we will either repair the damage or pay you compensation. However, we will not be liable for damage that you could have avoided by following our advice to apply an update offered to you free of charge or for damage that was caused by you failing to correctly follow installation instructions or to have in place the minimum system requirements advised by us.</li></ol> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-c2f86bc elementor-widget elementor-widget-heading" data-id="c2f86bc" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">DO YOU WANT TO UPLOAD?‎</h2> </div>
+</div>
+<div class="elementor-element elementor-element-d7fceef elementor-widget elementor-widget-text-editor" data-id="d7fceef" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Whenever you make use of a feature that allows you to upload content to our site, or to make contact with other users of our site, you must comply with the content standards set out in the following paragraph.   </p><p>Every time you upload you represent and warrant to us and other users of the site that any such contribution does comply with those standards, and you will be liable to us and indemnify us for any breach of that warranty and/or representation. This means you will be responsible for any loss or damage we suffer both directly and indirectly as a result of your breach of warranty and/or representation. Any content you upload to our site will be considered non-confidential and non-proprietary. You retain all of your ownership rights in your content, but you are required to grant us and other users of our site a limited licence to use, store and copy that content and to distribute and make it available to third parties. </p><p>We have the right to disclose your identity to any third party who is claiming that any content posted or uploaded by you to our site constitutes a violation of their intellectual property rights, or of their right to privacy. We have the right to remove any posting you make on our site if, in our opinion, your post does not comply with the content standards set out above or we feel does not represent the standards and behaviours of CTI. You are solely responsible for securing and backing up your content. We do not store terrorist content.</p><p>When you upload or post content to our site, you grant us and other users of the site the rights to use that content as set out above.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-6ff4665 elementor-widget elementor-widget-heading" data-id="6ff4665" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">BUGS, TROJANS, VIRUSES AND THE LIKE</h2> </div>
+</div>
+<div class="elementor-element elementor-element-2f2f3de elementor-widget elementor-widget-text-editor" data-id="2f2f3de" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>We do not and cannot guarantee that our site will be secure or free from bugs, trojans, viruses or similar.   This means that you alone are responsible for configuring your information technology, computer programmes and platform to access our site. You should use your own virus protection software.   You must not misuse our site by knowingly introducing viruses, trojans, worms, logic bombs or other material that is malicious or technologically harmful.</p><p>You must not attempt to gain unauthorised access to our site, the server on which our site is stored or any server, computer or database connected to our site. You must not attack our site via a denial-of-service attack or a distributed denial-of-service attack. By breaching this provision, you would commit a criminal offence under the Computer Misuse Act 1990. We will report any such breach to the relevant law enforcement authorities and we will co-operate with those authorities by disclosing your identity to them. In the event of such a breach, your right to use our site will cease immediately.</p><p>You may link to our home page, provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it. You must not establish a link in such a way as to suggest any form of association, approval or endorsement on our part where none exists. You must not establish a link to our site on any website that is not owned by you. Our site must not be framed on any other site, nor may you create a link to any part of our site other than the home page. We reserve the right to withdraw linking permission without notice. If you wish to link to or make any use of the content on our site other than that set out above, please contact <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="01686f676e41766e736571736472722c3935333130362c333833333432322f626d6e746576607872607171722f626e6c">[email&#160;protected]</a></p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-62cddcd elementor-widget elementor-widget-heading" data-id="62cddcd" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Market Opinions of Our Representatives</h2> </div>
+</div>
+<div class="elementor-element elementor-element-afa9898 elementor-widget elementor-widget-text-editor" data-id="afa9898" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Any opinions expressed by our company’s representatives regarding the prices of specific currencies and the direction they will take in the future are purely opinions and are used for demonstration or training purposes only. They do not necessarily represent the opinion of &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; are NOT guaranteed in any way. In no event shall &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; or Trade Wise Funding Limited have any liability for any losses incurred in connection with any decision made, action or inaction taken by any party in reliance upon the information provided verbally or via the Internet, or any delays, inaccuracies, errors in, or omissions of information.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-39bbd7a elementor-widget elementor-widget-heading" data-id="39bbd7a" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Disclaimer and Limitation of Liability</h2> </div>
+</div>
+<div class="elementor-element elementor-element-de5c5f1 elementor-widget elementor-widget-text-editor" data-id="de5c5f1" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>You agree that &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;, its suppliers and its third-party agents shall have no responsibility or liability for:</p><ul><li>Any injury or damages, whether caused by the negligence of <a href="https://citytradersimperium.com">&#8220;citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;, its employees, subcontractors, agents, suppliers, or otherwise arising in connection with the service and shall not be liable for any lost profits, losses, punitive, incidental or consequential damages, or any claim against <a href="https://citytradersimperium.com">&#8220;citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; by any other party; or</li><li>Any fault, inaccuracy, omission, delay, or any other failure in the service caused by your computer equipment or arising from your use of the service on such equipment. The content of other websites, services, goods, or advertisements that may be linked to the service is not maintained or controlled by <a href="https://citytradersimperium.com">&#8220;citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;.</li><li><a href="https://citytradersimperium.com">&#8220;citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; are therefore not responsible for the availability, content, or accuracy of other Web sites, services, or goods that may be linked to, or advertised on, the service.</li><li><a href="https://citytradersimperium.com">&#8220;citytradersimperium.com&#8221; </a>and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; ‎do not:<ul><li>Make any warranty, express or implied, with respect to the use of the links provided on, or to, the Service;</li><li>guarantee the accuracy, completeness, usefulness or adequacy of any other Web sites, services, goods, or advertisements that may be linked to the service; or</li><li>Make any endorsement, express or implied, of any other websites, services, goods, or advertisements that may be linked to the Service.</li><li>&#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; are not responsible for the reliability or continued availability of the telephone lines, wireless services, communications media, and equipment you use to access the service. </li></ul></li></ul><ul><li style="list-style-type: none;"> </li></ul><p>You understand that &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; ‎and/or third-party contributors to the service may choose at any time to inhibit or prohibit their content from being accessed under the T&amp;C.</p><ul><li style="list-style-type: none;"> </li></ul><p>You acknowledge that:</p><ul><li>The service is provided for information purposes only and is not intended for trading purposes;</li><li>The service includes information taken from domestic and other sources from around the world,</li><li>&#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; do not guarantee the sequence, accuracy, completeness, or timeliness of the Service;</li><li>The provision of certain parts of the service is subject to the terms and conditions of other agreements to which &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; is a party;</li><li>None of the information contained on this site constitutes a solicitation, offers, opinion, or recommendation by &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎ to buy or sell any security, or to provide legal, tax, accounting, or investment advice or services regarding the profitability or suitability of any security or investment; and</li><li>The information provided on this site is not intended for use by, or distribution to, any person or entity in any jurisdiction or country where such use or distribution would be contrary to law or regulation.</li></ul><p>Accordingly, anything to the contrary herein set forth notwithstanding, &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎, its officers and employees, general partner, affiliates, subsidiaries, successors and assigns, suppliers and its third-party agents shall not, directly or indirectly, be liable, in any way, to you or any other person for any:</p><ul><li>Inaccuracies or errors in or omissions from the service including, but not limited to, quotes and financial data;</li><li>Delays, errors, or interruptions in the transmission or delivery of the service; or loss or damage arising therefrom or occasioned thereby, or by any reason of nonperformance.</li></ul><p>Your Authority to Agree to this T&amp;C. You represent, warrant and covenant that:</p><ul><li>You have the power and authority to enter into this agreement; and</li><li>You are at least eighteen (18) years old.</li></ul> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-685a641 elementor-widget elementor-widget-heading" data-id="685a641" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Indemnification</h2> </div>
+</div>
+<div class="elementor-element elementor-element-b515027 elementor-widget elementor-widget-text-editor" data-id="b515027" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>You agree, at your own expense, to indemnify, defend and hold harmless &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎ and its employees, representatives, suppliers, affiliates, and agents, against any claim, suit, action, or other proceeding brought against &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎, its employees, representatives, suppliers, affiliates, and agents, by a third party, to the extent that such claim, suit, action, or other proceeding brought against &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎, its employees, representatives, suppliers, affiliates, and agents are based on or arises in connection with the service, or any links on the service, including, but not limited to:</p><ul><li>Your use or someone using your computer’s use of the Service;</li><li>Your use or someone using your account, where applicable;</li><li>A violation of the T&amp;C by you or anyone using your computer (or account, where applicable);</li><li>A claim that any use of the Service by you or someone using your computer (or account, where applicable) infringes any Intellectual Property Right of any third party or any right of personality or publicity, is libellous or defamatory, or otherwise results in injury or damage to any third party;</li><li>Any deletions, additions, insertions or alterations to, or any unauthorized use of, the Service by you or someone using your computer (or account, where applicable);</li><li>Any misrepresentation or breach of representation or warranty made by you contained herein; or</li><li>Any breach of any covenant or agreement to be performed by you hereunder. You agree to pay any and all costs, damages, and expenses, including, but not limited to, reasonable attorneys’ fees and costs awarded against or otherwise incurred by or in connection with or arising from any such claim, suit, action, or proceeding attributable to any such claim.</li></ul><p><a style="background-color: #fbfbfb;" href="https://citytradersimperium.com/" target="_blank" rel="noopener">&#8220;</a><a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; ‎reserve the right, at its own expense, to assume the exclusive defence and control of any matter otherwise subject to indemnification by you, in which event you will fully cooperate with &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎ in asserting any available defence. You acknowledge and agree to pay &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; reasonable attorney fees incurred in connection with any and all lawsuits brought against you by &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎ under the T&amp;C and any other terms and conditions of service on this site, including without limitation, lawsuits arising from your failure to indemnify &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎ pursuant to the T&amp;S.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-dfd30aa elementor-widget elementor-widget-heading" data-id="dfd30aa" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">JURISDICTION</h2> </div>
+</div>
+<div class="elementor-element elementor-element-b86c4b9 elementor-widget elementor-widget-text-editor" data-id="b86c4b9" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>This document and our relationship governed by English law. You and we both agree that the courts of England and Wales will have exclusive jurisdiction</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-924b4e7 elementor-widget elementor-widget-heading" data-id="924b4e7" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Termination</h2> </div>
+</div>
+<div class="elementor-element elementor-element-0d49f22 elementor-widget elementor-widget-text-editor" data-id="0d49f22" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>You may terminate the T&amp;C, with or without cause and at any time, by discontinuing your use of the Service and destroying all materials obtained from the service.</p><p>You agree that &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎, without notice, may terminate the T&amp;C, or suspend your access to the service, with or without cause at any time and effective immediately. The T&amp;C will terminate immediately without notice from  &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; if you fail to comply with any provision of the T&amp;C.</p><p>&#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; shall not be liable to you or any third party for the termination or suspension of the service, or any claims related to the termination or suspension of the service. Upon termination of the T&amp;C by you or &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;, you must destroy promptly all materials obtained from the Service and any copies thereof.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-dcf8521 elementor-widget elementor-widget-heading" data-id="dcf8521" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Citytradersimperium.com ‎and/or cticommunity.com</h2> </div>
+</div>
+<div class="elementor-element elementor-element-ae8aa15 elementor-widget elementor-widget-text-editor" data-id="ae8aa15" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Is an education/training provider. &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a>, &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; and/or Trade Wise Funding Limited are not accredited program or institution and is provided for informational, educational and/or training purposes only. &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a>, and &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8220;‎ in no way shall be considered as conforming with any educational standards or qualifications prescribed by any private or governmental entity.</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-441e9a0 elementor-widget elementor-widget-heading" data-id="441e9a0" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Entire Agreement</h2> </div>
+</div>
+<div class="elementor-element elementor-element-d100269 elementor-widget elementor-widget-text-editor" data-id="d100269" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>The T&amp;C and any other terms and conditions of service on this site, and its successor constitute the whole agreement between you and &#8220;<a href="https://citytradersimperium.com/" target="_blank" rel="noopener">citytradersimperium.com&#8221;</a> and/or &#8220;<a href="https://cticommunity.com/" target="_blank" rel="noopener">cticommunity.com</a>&#8221; ‎and govern your use of the service.</p> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
+<div class='footer-width-fixer'> <div data-elementor-type="wp-post" data-elementor-id="194" class="elementor elementor-194">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<footer data-particle_enable="false" data-particle-mobile-disabled="false" class="elementor-section elementor-top-section elementor-element elementor-element-2a28957 elementor-section-content-middle elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2a28957" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;tp_display_rules_enable&quot;:&quot;yes&quot;,&quot;background_background&quot;:&quot;gradient&quot;,&quot;tp_display_rules_output&quot;:&quot;yes&quot;}">
+<div class="elementor-background-overlay"></div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8f32943" data-id="8f32943" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-1d20357 elementor-widget elementor-widget-image" data-id="1d20357" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<img width="2082" height="1773" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202082%201773'%3E%3C/svg%3E" class="attachment-full size-full wp-image-24451" alt="Trade Wise Funding Logo - Funding Traders 2" data-lazy-srcset="https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2.png 2082w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-300x255.png 300w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-1024x872.png 1024w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-768x654.png 768w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-1536x1308.png 1536w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-2048x1744.png 2048w" data-lazy-sizes="(max-width: 2082px) 100vw, 2082px" data-lazy-src="https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2.png" /><noscript><img width="2082" height="1773"   alt="Trade Wise Funding Logo - Funding Traders 2" data-srcset="https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2.png 2082w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-300x255.png 300w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-1024x872.png 1024w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-768x654.png 768w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-1536x1308.png 1536w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-2048x1744.png 2048w"  data-src="https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2.png" data-sizes="(max-width: 2082px) 100vw, 2082px" class="attachment-full size-full wp-image-24451 lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="2082" height="1773" src="https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2.png" class="attachment-full size-full wp-image-24451" alt="Trade Wise Funding Logo - Funding Traders 2" srcset="https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2.png 2082w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-300x255.png 300w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-1024x872.png 1024w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-768x654.png 768w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-1536x1308.png 1536w, https://citytradersimperium.com/wp-content/uploads/2022/05/City-Traders-Imperium-Logo-Funding-Traders-2-2048x1744.png 2048w" sizes="(max-width: 2082px) 100vw, 2082px" /></noscript></noscript> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-818b122 elementor-widget elementor-widget-heading" data-id="818b122" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">Trade Wise Funding</h4> </div>
+</div>
+<div class="elementor-element elementor-element-f8a00ab elementor-widget elementor-widget-heading" data-id="f8a00ab" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">Funding & Education For Traders.</h4> </div>
+</div>
+<div class="elementor-element elementor-element-62029a0 elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="62029a0" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/contact-us/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="far fa-hand-point-right"></i> </span>
+<span class="elementor-icon-list-text">Contact Us</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-cc0fcbd elementor-icon-list--layout-inline elementor-align-left elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="cc0fcbd" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items elementor-inline-items">
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://www.youtube.com/channel/UCEkZnt9WnICT2WQ7BfrWTKA?view_as=subscriber" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fab fa-youtube"></i> </span>
+<span class="elementor-icon-list-text"></span>
+</a>
+</li>
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://www.facebook.com/CityTradersImperium/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fab fa-facebook-square"></i> </span>
+<span class="elementor-icon-list-text"></span>
+</a>
+</li>
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://twitter.com/CTI_Funding" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fab fa-twitter-square"></i> </span>
+<span class="elementor-icon-list-text"></span>
+</a>
+</li>
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://www.instagram.com/city_traders_imperium/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fab fa-instagram"></i> </span>
+<span class="elementor-icon-list-text"></span>
+</a>
+</li>
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://www.tiktok.com/@cti_funding" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fab fa-tiktok"></i> </span>
+<span class="elementor-icon-list-text"></span>
+</a>
+</li>
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://discord.gg/86H9wYr9vh" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fab fa-discord"></i> </span>
+<span class="elementor-icon-list-text"></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<section data-particle_enable="false" data-particle-mobile-disabled="false" class="elementor-section elementor-inner-section elementor-element elementor-element-72d836b elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="72d836b" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-7dbab67" data-id="7dbab67" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-6a679ce elementor-widget elementor-widget-heading" data-id="6a679ce" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">Funding Programs</h4> </div>
+</div>
+<div class="elementor-element elementor-element-182eb61 elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="182eb61" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/funded-account-challenge-funding-program/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">2-Step Challenge</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/forex-funded-trader-accounts/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">1-Step Instant Funding</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/direct-funding-program/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Direct Funding</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-ee3e7ae" data-id="ee3e7ae" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-23508ee elementor-widget elementor-widget-heading" data-id="23508ee" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-large">Forex Education</h4> </div>
+</div>
+<div class="elementor-element elementor-element-6588f15 elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="6588f15" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/smart-money-concepts-bank-level-trading/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Bank Levels Trading (BLT)</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/learn-to-trade-forex-trading-beginners/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Intro To Forex (ITF)</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/profitable-forex-strategy/" target="_blank">
+ <span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">STT Strategy (STT)</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/day-trading-strategy/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Corrective Strategy (CS)</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/trading-psychology-forex-education/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Build Your Edge (BYE)</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-98bcf3d" data-id="98bcf3d" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-71ae85e elementor-widget elementor-widget-heading" data-id="71ae85e" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">more</h4> </div>
+</div>
+<div class="elementor-element elementor-element-9cf11ae elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="9cf11ae" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/affiliate-program-3/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Become an Affiliate</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/forex-trading-and-education/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Blog</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/fundamental-analysis-forex/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Fundamentals Reports</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/funded-traders-world-cup-competitions/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">World Cup</span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://citytradersimperium.com/meet-cti-traders/" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">About us</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-40178d4" data-id="40178d4" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-ac49718 elementor-widget elementor-widget-heading" data-id="ac49718" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h4 class="elementor-heading-title elementor-size-default">Free Resources</h4> </div>
+</div>
+<div class="elementor-element elementor-element-04f8b3d elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="04f8b3d" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items">
+<li class="elementor-icon-list-item">
+<a href="https://go.vantagemarkets.co.uk/visit/?bta=35208&#038;brand=fca" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Best Low Commissions Broker </span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://icmarkets.com/?camp=43459" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Best Low Spreads Broker </span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.forexvps.net/?aff=27920" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">VPS For EAs </span>
+</a>
+</li>
+<li class="elementor-icon-list-item">
+<a href="https://www.forextester.com/idevaffiliate/idevaffiliate.php?id=4224" target="_blank">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-chevron-right"></i> </span>
+<span class="elementor-icon-list-text">Best Backtesting Software</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="elementor-element elementor-element-a30fe97 elementor-align-left elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="a30fe97" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items elementor-inline-items">
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://citytradersimperium.com/terms-conditions-of-service/" target="_blank">
+<span class="elementor-icon-list-text">Terms & Conditions</span>
+</a>
+</li>
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://citytradersimperium.com/privacy-policy/" target="_blank">
+<span class="elementor-icon-list-text">Privacy Policy</span>
+</a>
+</li>
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://citytradersimperium.com/affiliates-terms-and-conditions/" target="_blank">
+<span class="elementor-icon-list-text">Affiliate Agreement</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<footer data-particle_enable="false" data-particle-mobile-disabled="false" class="elementor-section elementor-top-section elementor-element elementor-element-35c2e8c elementor-section-content-middle elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="35c2e8c" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;tp_display_rules_enable&quot;:&quot;yes&quot;,&quot;background_background&quot;:&quot;gradient&quot;,&quot;tp_display_rules_output&quot;:&quot;yes&quot;}">
+<div class="elementor-background-overlay"></div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<footer class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c94e419" data-id="c94e419" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-27cc63b elementor-widget elementor-widget-text-editor" data-id="27cc63b" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p>Trade Wise Funding Limited is a limited company registered in England &amp; Wales. Company Number 11463147. VAT Number GB 341124840. </p><p>Trade Wise Funding™ &amp; Funded Trader Program™ are Registered Trademarks of Trade Wise Funding Limited.</p><p>Trade Wise Funding is NOT authorised or regulated by the Financial Conduct Authority. CTI does not undertake any regulated activities.</p><p><span style="color: #0069df;">© 2023 Copyright Trade Wise Funding™. All Rights Reserved.</span></p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-8ea0294 elementor-widget elementor-widget-text-editor" data-id="8ea0294" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<div class="elementor elementor-65705 elementor-location-footer" data-elementor-type="footer" data-elementor-id="65705"><div class="elementor-section-wrap"><section class="elementor-section elementor-top-section elementor-element elementor-element-64cfe5a2 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="64cfe5a2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-container elementor-column-gap-no"><div class="elementor-row"><div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2711643" data-id="2711643" data-element_type="column"><div class="elementor-column-wrap elementor-element-populated"><div class="elementor-widget-wrap"><div class="elementor-element elementor-element-b619cb6 elementor-widget elementor-widget-heading" data-id="b619cb6" data-element_type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><p><strong>Risk Disclosure</strong>: The Services Provided On This Website Are Professional Skill-Assessment Services. The Outcome Of The Proposed Services Is Necessarily Determined By The Individual Professional Skill Level And Ability To Perform Under The Program Guidelines And Objectives As Elaborated For Each Service Separately. Clients Are Advised To Conclude A Thorough Study Of The Requirements Of The Funding Programs Before Signing Up For Any Of The Services.</p><p><strong>Hypothetical Performance Disclosure</strong>: Hypothetical Performance Results Have Many Inherent Limitations, Some Of Which Are Described Below. No Representation Is Being Made That Any Account Will Or Is Likely To Achieve Profits Or Losses Similar To Those Shown; In Fact, There Are Frequently Sharp Differences Between Hypothetical Performance Results And The Actual Results Subsequently Achieved By Any Particular Funding Program. One Of The Limitations Of Hypothetical Performance Results Is That They Are Generally Prepared With The Benefit Of Hindsight. In Addition, Hypothetical Trading Does Not Involve Financial Risk, And No Hypothetical Trading Record Can Completely Account For The Impact Of Financial Risk Of Actual Trading. For Example, The Ability To Withstand Losses Or To Adhere To A Particular Trading Program In Spite Of Trading Losses Are Material Points Which Can Also Adversely Affect Actual Trading Results. There Are Numerous Other Factors Related To The Markets In General Or To The Implementation Of Any Specific Trading Program Which Cannot Be Fully Accounted For In The Preparation Of Hypothetical Performance Results And All Which Can Adversely Affect Trading Results.</p></div></div></div></div></div></div></div></section></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div> </footer>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('load',function(){
+    jQuery('.wpforms-submit:contains("Register For Live Webinar")').click(function(){
+gtag('event', 'conversion', {'send_to': 'AW-348542794/nXdjCPTop-oCEMqumaYB'});    });
+  });
+});</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+var gr_goal_params = {
+ param_0 : '',
+ param_1 : '',
+ param_2 : '',
+ param_3 : '',
+ param_4 : '',
+ param_5 : ''
+};</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://app.getresponse.com/goals_log.js?p=7625003&u=yatw9" defer></script><div class="wt-cli-cookie-bar-container" data-nosnippet="true"><!--googleoff: all--><div id="cookie-law-info-bar" role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="wt-cli-cookie-banner" data-cli-geo-loc="0" style="" class="wt-cli-cookie-bar"><div class="cli-wrapper"><span id="wt-cli-cookie-banner">This website uses cookies to improve your experience, analyze site traffic and serve targeted ads in accordance with our <a href="https://citytradersimperium.com/privacy-policy/" />Privacy Policy</a>. We'll assume you're ok with this, but you can opt-out if you wish. <a id="wt-cli-accept-btn" tabindex="0" role='button' style="margin:5px;" data-cli_action="accept" class="wt-cli-element medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button">Accept</a></span></div></div><div tabindex="0" id="cookie-law-info-again" style="display:none;"><span id="cookie_hdr_showagain">Privacy & Cookies Policy</span></div><div class="cli-modal" id="cliSettingsPopup" role="dialog" aria-labelledby="wt-cli-privacy-title" tabindex="-1" aria-hidden="true">
+<div class="cli-modal-dialog" role="document">
+<div class="cli-modal-content cli-bar-popup">
+<button aria-label="Close" type="button" class="cli-modal-close" id="cliModalClose">
+<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
+<span class="wt-cli-sr-only">Close</span>
+</button>
+<div class="cli-modal-body">
+<div class="wt-cli-element cli-container-fluid cli-tab-container">
+<div class="cli-row">
+<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+<div class="cli-privacy-overview">
+<h4 id='wt-cli-privacy-title'>Privacy Overview</h4> <div class="cli-privacy-content">
+<div class="cli-privacy-content-text">This website uses cookies to improve your experience while you navigate through the website. Out of these cookies, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may have an effect on your browsing experience.</div>
+</div>
+<a id="wt-cli-privacy-readmore" tabindex="0" role="button" class="cli-privacy-readmore" data-readmore-text="Show more" data-readless-text="Show less"></a> </div>
+</div>
+<div class="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container" role="tablist">
+</div>
+</div>
+</div>
+</div>
+<div class="cli-modal-footer">
+<div class="wt-cli-element cli-container-fluid cli-tab-container">
+<div class="cli-row">
+<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+<div class="cli-tab-footer wt-cli-privacy-overview-actions">
+<a id="wt-cli-privacy-save-btn" role="button" tabindex="0" data-cli-action="accept" class="wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn">Save & Accept</a>
+</div>
+<div class="wt-cli-ckyes-footer-section">
+<div class="wt-cli-ckyes-brand-logo">Powered by <a target="_blank" href="https://www.cookieyes.com/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="CookieYes Logo" data-lazy-src="https://citytradersimperium.com/wp-content/plugins/webtoffee-gdpr-cookie-consent/public/images/logo-cookieyes.svg"><noscript><img  alt="CookieYes Logo" data-src="https://citytradersimperium.com/wp-content/plugins/webtoffee-gdpr-cookie-consent/public/images/logo-cookieyes.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img src="https://citytradersimperium.com/wp-content/plugins/webtoffee-gdpr-cookie-consent/public/images/logo-cookieyes.svg" alt="CookieYes Logo"></noscript></noscript></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<!--googleon: all--></div>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		/* <![CDATA[ */
+			cli_cookiebar_settings='{"animate_speed_hide":"500","animate_speed_show":"500","background":"#212121","border":"#b1a6a6c2","border_on":false,"button_1_button_colour":"#0069df","button_1_button_hover":"#0054b2","button_1_link_colour":"#ffffff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#fbfbfb","button_2_as_button":false,"button_2_hidebar":false,"button_2_nofollow":true,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#0069df","button_4_as_button":false,"button_7_button_colour":"#0069df","button_7_button_hover":"#0054b2","button_7_link_colour":"#fff","button_7_as_button":true,"button_7_new_win":false,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":true,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"150px","text":"#ffffff","show_once_yn":false,"show_once":"10000","logging_on":true,"as_popup":false,"popup_overlay":true,"bar_heading_text":"","cookie_bar_as":"banner","cookie_setting_popup":true,"accept_all":true,"js_script_blocker":false,"popup_showagain_position":"bottom-right","widget_position":"left","button_1_style":[["margin","5px"]],"button_2_style":"","button_3_style":"","button_4_style":[["margin","5px 20px 5px 20px"]],"button_5_style":[],"button_7_style":[],"accept_close_page_navigation":false}';
+		/* ]]> */
+		</script>
+<link rel='stylesheet' id='e-animations-css' href='https://citytradersimperium.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.12.2' media='all' />
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://citytradersimperium.com/wp-content/cache/min/1/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-youtube.js?ver=1682620697' id='gtm4wp-youtube-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.2' id='jquery-ui-mouse-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/jquery/ui/slider.min.js?ver=1.13.2' id='jquery-ui-slider-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='//citytradersimperium.com/wp-content/uploads/theplus-addons/theplus.min.js?ver=1682309305' id='theplus-front-js-js' defer></script>
+<script type="rocketlazyloadscript" id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id='rocket-preload-links-js-extra'>
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?(.*)wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/citytradersimperium.com","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script src='https://citytradersimperium.com/wp-content/plugins/wp-smushit/app/assets/js/smush-lazy-load.min.js?ver=3.12.6' id='smush-lazy-load-js' defer></script>
+<script id='eael-general-js-extra'>
+var localize = {"ajaxurl":"https:\/\/citytradersimperium.com\/wp-admin\/admin-ajax.php","nonce":"12b92d051e","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping","fg_mfp_counter_text":"of"},"page_permalink":"https:\/\/citytradersimperium.com\/terms-conditions-of-service\/","cart_redirectition":"no","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"ParticleThemesData":{"default":"{\"particles\":{\"number\":{\"value\":160,\"density\":{\"enable\":true,\"value_area\":800}},\"color\":{\"value\":\"#ffffff\"},\"shape\":{\"type\":\"circle\",\"stroke\":{\"width\":0,\"color\":\"#000000\"},\"polygon\":{\"nb_sides\":5},\"image\":{\"src\":\"img\/github.svg\",\"width\":100,\"height\":100}},\"opacity\":{\"value\":0.5,\"random\":false,\"anim\":{\"enable\":false,\"speed\":1,\"opacity_min\":0.1,\"sync\":false}},\"size\":{\"value\":3,\"random\":true,\"anim\":{\"enable\":false,\"speed\":40,\"size_min\":0.1,\"sync\":false}},\"line_linked\":{\"enable\":true,\"distance\":150,\"color\":\"#ffffff\",\"opacity\":0.4,\"width\":1},\"move\":{\"enable\":true,\"speed\":6,\"direction\":\"none\",\"random\":false,\"straight\":false,\"out_mode\":\"out\",\"bounce\":false,\"attract\":{\"enable\":false,\"rotateX\":600,\"rotateY\":1200}}},\"interactivity\":{\"detect_on\":\"canvas\",\"events\":{\"onhover\":{\"enable\":true,\"mode\":\"repulse\"},\"onclick\":{\"enable\":true,\"mode\":\"push\"},\"resize\":true},\"modes\":{\"grab\":{\"distance\":400,\"line_linked\":{\"opacity\":1}},\"bubble\":{\"distance\":400,\"size\":40,\"duration\":2,\"opacity\":8,\"speed\":3},\"repulse\":{\"distance\":200,\"duration\":0.4},\"push\":{\"particles_nb\":4},\"remove\":{\"particles_nb\":2}}},\"retina_detect\":true}","nasa":"{\"particles\":{\"number\":{\"value\":250,\"density\":{\"enable\":true,\"value_area\":800}},\"color\":{\"value\":\"#ffffff\"},\"shape\":{\"type\":\"circle\",\"stroke\":{\"width\":0,\"color\":\"#000000\"},\"polygon\":{\"nb_sides\":5},\"image\":{\"src\":\"img\/github.svg\",\"width\":100,\"height\":100}},\"opacity\":{\"value\":1,\"random\":true,\"anim\":{\"enable\":true,\"speed\":1,\"opacity_min\":0,\"sync\":false}},\"size\":{\"value\":3,\"random\":true,\"anim\":{\"enable\":false,\"speed\":4,\"size_min\":0.3,\"sync\":false}},\"line_linked\":{\"enable\":false,\"distance\":150,\"color\":\"#ffffff\",\"opacity\":0.4,\"width\":1},\"move\":{\"enable\":true,\"speed\":1,\"direction\":\"none\",\"random\":true,\"straight\":false,\"out_mode\":\"out\",\"bounce\":false,\"attract\":{\"enable\":false,\"rotateX\":600,\"rotateY\":600}}},\"interactivity\":{\"detect_on\":\"canvas\",\"events\":{\"onhover\":{\"enable\":true,\"mode\":\"bubble\"},\"onclick\":{\"enable\":true,\"mode\":\"repulse\"},\"resize\":true},\"modes\":{\"grab\":{\"distance\":400,\"line_linked\":{\"opacity\":1}},\"bubble\":{\"distance\":250,\"size\":0,\"duration\":2,\"opacity\":0,\"speed\":3},\"repulse\":{\"distance\":400,\"duration\":0.4},\"push\":{\"particles_nb\":4},\"remove\":{\"particles_nb\":2}}},\"retina_detect\":true}","bubble":"{\"particles\":{\"number\":{\"value\":15,\"density\":{\"enable\":true,\"value_area\":800}},\"color\":{\"value\":\"#1b1e34\"},\"shape\":{\"type\":\"polygon\",\"stroke\":{\"width\":0,\"color\":\"#000\"},\"polygon\":{\"nb_sides\":6},\"image\":{\"src\":\"img\/github.svg\",\"width\":100,\"height\":100}},\"opacity\":{\"value\":0.3,\"random\":true,\"anim\":{\"enable\":false,\"speed\":1,\"opacity_min\":0.1,\"sync\":false}},\"size\":{\"value\":50,\"random\":false,\"anim\":{\"enable\":true,\"speed\":10,\"size_min\":40,\"sync\":false}},\"line_linked\":{\"enable\":false,\"distance\":200,\"color\":\"#ffffff\",\"opacity\":1,\"width\":2},\"move\":{\"enable\":true,\"speed\":8,\"direction\":\"none\",\"random\":false,\"straight\":false,\"out_mode\":\"out\",\"bounce\":false,\"attract\":{\"enable\":false,\"rotateX\":600,\"rotateY\":1200}}},\"interactivity\":{\"detect_on\":\"canvas\",\"events\":{\"onhover\":{\"enable\":false,\"mode\":\"grab\"},\"onclick\":{\"enable\":false,\"mode\":\"push\"},\"resize\":true},\"modes\":{\"grab\":{\"distance\":400,\"line_linked\":{\"opacity\":1}},\"bubble\":{\"distance\":400,\"size\":40,\"duration\":2,\"opacity\":8,\"speed\":3},\"repulse\":{\"distance\":200,\"duration\":0.4},\"push\":{\"particles_nb\":4},\"remove\":{\"particles_nb\":2}}},\"retina_detect\":true}","snow":"{\"particles\":{\"number\":{\"value\":450,\"density\":{\"enable\":true,\"value_area\":800}},\"color\":{\"value\":\"#fff\"},\"shape\":{\"type\":\"circle\",\"stroke\":{\"width\":0,\"color\":\"#000000\"},\"polygon\":{\"nb_sides\":5},\"image\":{\"src\":\"img\/github.svg\",\"width\":100,\"height\":100}},\"opacity\":{\"value\":0.5,\"random\":true,\"anim\":{\"enable\":false,\"speed\":1,\"opacity_min\":0.1,\"sync\":false}},\"size\":{\"value\":5,\"random\":true,\"anim\":{\"enable\":false,\"speed\":40,\"size_min\":0.1,\"sync\":false}},\"line_linked\":{\"enable\":false,\"distance\":500,\"color\":\"#ffffff\",\"opacity\":0.4,\"width\":2},\"move\":{\"enable\":true,\"speed\":6,\"direction\":\"bottom\",\"random\":false,\"straight\":false,\"out_mode\":\"out\",\"bounce\":false,\"attract\":{\"enable\":false,\"rotateX\":600,\"rotateY\":1200}}},\"interactivity\":{\"detect_on\":\"canvas\",\"events\":{\"onhover\":{\"enable\":true,\"mode\":\"bubble\"},\"onclick\":{\"enable\":true,\"mode\":\"repulse\"},\"resize\":true},\"modes\":{\"grab\":{\"distance\":400,\"line_linked\":{\"opacity\":0.5}},\"bubble\":{\"distance\":400,\"size\":4,\"duration\":0.3,\"opacity\":1,\"speed\":3},\"repulse\":{\"distance\":200,\"duration\":0.4},\"push\":{\"particles_nb\":4},\"remove\":{\"particles_nb\":2}}},\"retina_detect\":true}","nyan_cat":"{\"particles\":{\"number\":{\"value\":150,\"density\":{\"enable\":false,\"value_area\":800}},\"color\":{\"value\":\"#ffffff\"},\"shape\":{\"type\":\"star\",\"stroke\":{\"width\":0,\"color\":\"#000000\"},\"polygon\":{\"nb_sides\":5},\"image\":{\"src\":\"http:\/\/wiki.lexisnexis.com\/academic\/images\/f\/fb\/Itunes_podcast_icon_300.jpg\",\"width\":100,\"height\":100}},\"opacity\":{\"value\":0.5,\"random\":false,\"anim\":{\"enable\":false,\"speed\":1,\"opacity_min\":0.1,\"sync\":false}},\"size\":{\"value\":4,\"random\":true,\"anim\":{\"enable\":false,\"speed\":40,\"size_min\":0.1,\"sync\":false}},\"line_linked\":{\"enable\":false,\"distance\":150,\"color\":\"#ffffff\",\"opacity\":0.4,\"width\":1},\"move\":{\"enable\":true,\"speed\":14,\"direction\":\"left\",\"random\":false,\"straight\":true,\"out_mode\":\"out\",\"bounce\":false,\"attract\":{\"enable\":false,\"rotateX\":600,\"rotateY\":1200}}},\"interactivity\":{\"detect_on\":\"canvas\",\"events\":{\"onhover\":{\"enable\":false,\"mode\":\"grab\"},\"onclick\":{\"enable\":true,\"mode\":\"repulse\"},\"resize\":true},\"modes\":{\"grab\":{\"distance\":200,\"line_linked\":{\"opacity\":1}},\"bubble\":{\"distance\":400,\"size\":40,\"duration\":2,\"opacity\":8,\"speed\":3},\"repulse\":{\"distance\":200,\"duration\":0.4},\"push\":{\"particles_nb\":4},\"remove\":{\"particles_nb\":2}}},\"retina_detect\":true}"},"eael_login_nonce":"631cc087fc","eael_register_nonce":"5f804bf8ad","eael_lostpassword_nonce":"3548329352","eael_resetpassword_nonce":"8c635a98e1"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=5.7.1' id='eael-general-js' defer></script>
+<script id='wpforms-user-journey-js-extra'>
+var wpforms_user_journey = {"is_ssl":"1","page_id":"3570"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/wpforms-user-journey/assets/js/wpforms-user-journey.min.js?ver=1.0.6' id='wpforms-user-journey-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.0.1' id='smartmenus-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.12.3' id='elementor-pro-webpack-runtime-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.12.2' id='elementor-webpack-runtime-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.12.2' id='elementor-frontend-modules-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type="rocketlazyloadscript" id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/citytradersimperium.com\/wp-admin\/admin-ajax.php","nonce":"97da88ab1f","urls":{"assets":"https:\/\/citytradersimperium.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/citytradersimperium.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},
+"facebook_sdk":{"lang":"en_GB","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/citytradersimperium.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.12.3' id='elementor-pro-frontend-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6' id='swiper-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.12.2' id='share-link-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0' id='elementor-dialog-js' defer></script>
+<script type="rocketlazyloadscript" id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},
+"version":"3.12.2","is_static":false,"experimentalFeatures":{"a11y_improvements":true,"additional_custom_breakpoints":true,"theme_builder_v2":true,"landing-pages":true,"page-transitions":true,"notes":true,"loop":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/citytradersimperium.com\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"body_background_background":"classic","active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_description_src":"description"},"post":{"id":3570,"title":"Terms%20%26%20Conditions%20Of%20Service","excerpt":"","featuredImage":false}};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.12.2' id='elementor-frontend-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.12.3' id='pro-preloaded-elements-handlers-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.12.2' id='preloaded-modules-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.12.3' id='e-sticky-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/underscore.min.js?ver=1.13.4' id='underscore-js' defer></script>
+<script id='wp-util-js-extra'>
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-includes/js/wp-util.min.js?ver=928f64076eb5dfa6f2474dfde395a3d1' id='wp-util-js' defer></script>
+<script id='wpforms-elementor-js-extra'>
+var wpformsElementorVars = {"captcha_provider":"hcaptcha","recaptcha_type":"v2"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://citytradersimperium.com/wp-content/plugins/wpforms/assets/js/integrations/elementor/frontend.min.js?ver=1.8.1.2' id='wpforms-elementor-js' defer></script>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://static.leaddyno.com/js" defer></script>
+<script type="rocketlazyloadscript">
+LeadDyno.key = "3d020a711653b4683c7db8f30e95d811bc27205b";
+LeadDyno.channel = "wordpress";
+LeadDyno.recordVisit();
+LeadDyno.autoWatch();
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://citytradersimperium.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img  alt="" width="480" height="360" data-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script><script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>

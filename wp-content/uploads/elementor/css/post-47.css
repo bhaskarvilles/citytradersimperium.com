@@ -1,0 +1,171 @@
+.elementor-kit-47 {
+  --e-global-color-primary: #212121;
+  --e-global-color-secondary: #212121;
+  --e-global-color-text: #212121;
+  --e-global-color-accent: #0069df;
+  --e-global-color-155d66c: #212121;
+  --e-global-color-121a9dad: #191919;
+  --e-global-color-9fcfa4f: #ffffff;
+  --e-global-color-0e64143: #e0e0e0;
+  --e-global-color-a931550: #e0a000;
+  --e-global-color-6a3b48b: #0069df;
+  --e-global-color-48ac095b: #0676f0;
+  --e-global-color-16749a18: #0db4a5;
+  --e-global-color-6aa3b8d6: #f00000;
+  --e-global-typography-primary-font-family: "IBM Plex Sans Condensed";
+  --e-global-typography-primary-font-size: 60px;
+  --e-global-typography-primary-font-weight: 700;
+  --e-global-typography-primary-line-height: 1.1em;
+  --e-global-typography-primary-letter-spacing: -1px;
+  --e-global-typography-secondary-font-family: "Roboto Condensed";
+  --e-global-typography-secondary-font-size: 38px;
+  --e-global-typography-secondary-font-weight: 700;
+  --e-global-typography-secondary-line-height: 1.1em;
+  --e-global-typography-text-font-family: "Roboto";
+  --e-global-typography-text-font-size: 16px;
+  --e-global-typography-text-font-weight: 400;
+  --e-global-typography-text-line-height: 1.5em;
+  --e-global-typography-accent-font-family: "Roboto Condensed";
+  --e-global-typography-accent-font-size: 20px;
+  --e-global-typography-accent-font-weight: 500;
+  --e-global-typography-accent-line-height: 1.1em;
+  color: var(--e-global-color-155d66c);
+  font-family: "Roboto", Sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  background-color: var(--e-global-color-9fcfa4f);
+}
+.elementor-kit-47 a {
+  color: var(--e-global-color-6a3b48b);
+  text-decoration: none;
+}
+.elementor-kit-47 a:hover {
+  text-decoration: none;
+}
+.elementor-kit-47 h1 {
+  color: var(--e-global-color-155d66c);
+  font-family: "IBM Plex Sans Condensed", Sans-serif;
+  font-size: 70px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1em;
+  letter-spacing: -1px;
+}
+.elementor-kit-47 h2 {
+  color: var(--e-global-color-155d66c);
+  font-family: "Roboto Condensed", Sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.1em;
+}
+.elementor-kit-47 h3 {
+  color: var(--e-global-color-155d66c);
+  font-family: "Roboto Condensed", Sans-serif;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.1em;
+}
+.elementor-kit-47 h4 {
+  color: var(--e-global-color-155d66c);
+  font-family: "Roboto", Sans-serif;
+}
+.elementor-kit-47 h5 {
+  color: var(--e-global-color-155d66c);
+  font-family: "Roboto", Sans-serif;
+}
+.elementor-kit-47 h6 {
+  color: var(--e-global-color-155d66c);
+  font-family: "Roboto", Sans-serif;
+}
+.elementor-kit-47 button,
+.elementor-kit-47 input[type="button"],
+.elementor-kit-47 input[type="submit"],
+.elementor-kit-47 .elementor-button {
+  font-family: "Roboto Condensed", Sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.1em;
+  color: var(--e-global-color-9fcfa4f);
+  background-color: var(--e-global-color-6a3b48b);
+  border-radius: 3px 3px 3px 3px;
+  padding: 10px 20px 10px 20px;
+}
+.elementor-kit-47 button:hover,
+.elementor-kit-47 button:focus,
+.elementor-kit-47 input[type="button"]:hover,
+.elementor-kit-47 input[type="button"]:focus,
+.elementor-kit-47 input[type="submit"]:hover,
+.elementor-kit-47 input[type="submit"]:focus,
+.elementor-kit-47 .elementor-button:hover,
+.elementor-kit-47 .elementor-button:focus {
+  color: var(--e-global-color-6a3b48b);
+  background-color: var(--e-global-color-0e64143);
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.5);
+  border-style: solid;
+  border-width: 3px 3px 3px 3px;
+  border-color: var(--e-global-color-155d66c);
+  border-radius: 0px 0px 0px 0px;
+}
+.elementor-kit-47 img {
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+}
+.elementor-kit-47 label {
+  color: var(--e-global-color-155d66c);
+  font-family: "Roboto", Sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+.elementor-kit-47 input:not([type="button"]):not([type="submit"]),
+.elementor-kit-47 textarea,
+.elementor-kit-47 .elementor-field-textual {
+  color: var(--e-global-color-155d66c);
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--e-global-color-6a3b48b);
+  border-radius: 3px 3px 3px 3px;
+}
+.elementor-kit-47 input:focus:not([type="button"]):not([type="submit"]),
+.elementor-kit-47 textarea:focus,
+.elementor-kit-47 .elementor-field-textual:focus {
+  color: var(--e-global-color-155d66c);
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--e-global-color-6a3b48b);
+  border-radius: 3px 3px 3px 3px;
+}
+.elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: 1200px;
+}
+.e-con {
+  --container-max-width: 1200px;
+}
+.elementor-widget:not(:last-child) {
+  margin-bottom: 20px;
+}
+.elementor-element {
+  --widgets-spacing: 20px;
+}
+ {
+}
+h1.entry-title {
+  display: var(--page-title-display);
+}
+@media (max-width: 1024px) {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1024px;
+  }
+  .e-con {
+    --container-max-width: 1024px;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 767px;
+  }
+  .e-con {
+    --container-max-width: 767px;
+  }
+}
